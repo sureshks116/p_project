@@ -37,6 +37,29 @@ body {
   }
 }
 
+@keyframes heartbeat {
+  0% {
+    transform: scale(1);
+  }
+  14% {
+    transform: scale(1.3);
+  }
+  28% {
+    transform: scale(1);
+  }
+  42% {
+    transform: scale(1.3);
+  }
+  70% {
+    transform: scale(1);
+  }
+}
+
+.heart-beat {
+  display: inline-block;
+  animation: heartbeat 1.5s infinite;
+}
+
 @keyframes fadeIn {
   from {
     opacity: 0;
@@ -275,6 +298,59 @@ footer {
   height: 100%;
   pointer-events: none;
   z-index: 100;
+}
+
+/* Music Section */
+.music-section {
+  padding: 5rem 10%;
+  background-color: var(--light-bg);
+}
+
+.music-list {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.song-item {
+  background: white;
+  padding: 1.5rem;
+  border-radius: 15px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  transition: transform 0.3s;
+}
+
+.song-item:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+}
+
+.song-info h3 {
+  color: var(--primary-color);
+  font-family: var(--font-body);
+  margin-bottom: 0.2rem;
+}
+
+.song-info p {
+  color: var(--text-color);
+  font-size: 0.9rem;
+}
+
+.audio-controls audio {
+  height: 40px;
+}
+
+@media (max-width: 768px) {
+  .song-item {
+    flex-direction: column;
+    text-align: center;
+    gap: 1rem;
+  }
 }
 
 /* Media Queries */

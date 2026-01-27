@@ -41,14 +41,16 @@ document.addEventListener("DOMContentLoaded", () => {
   };
 
   // Button Click Event
-  celebrateBtn.addEventListener("click", () => {
-    fireConfetti();
-    celebrateBtn.innerHTML = "Make Another Wish! 🌠";
+  if (celebrateBtn) {
+    celebrateBtn.addEventListener("click", () => {
+      fireConfetti();
+      celebrateBtn.innerHTML = "Make Another Wish! 🌠";
 
-    // Simple Audio Play (Optional, user can add their own file)
-    // const audio = new Audio('assets/birthday_song.mp3');
-    // audio.play().catch(e => console.log("Audio play failed (interaction needed first):", e));
-  });
+      // Simple Audio Play (Optional, user can add their own file)
+      // const audio = new Audio('assets/birthday_song.mp3');
+      // audio.play().catch(e => console.log("Audio play failed (interaction needed first):", e));
+    });
+  }
 
   // Scroll Animation (Intersection Observer)
   const observerOptions = {
@@ -65,23 +67,25 @@ document.addEventListener("DOMContentLoaded", () => {
   }, observerOptions);
 
   const galleryItems = document.querySelectorAll(".gallery-item");
-  galleryItems.forEach((item) => {
-    item.style.opacity = "0";
-    item.style.transform = "translateY(30px)";
-    item.style.transition = "all 0.6s ease-out";
-    observer.observe(item);
-  });
-
-  // Add class for visible items
-  document.addEventListener("scroll", () => {
+  if (galleryItems.length > 0) {
     galleryItems.forEach((item) => {
-      const rect = item.getBoundingClientRect();
-      if (rect.top < window.innerHeight - 50) {
-        item.style.opacity = "1";
-        item.style.transform = "translateY(0)";
-      }
+      item.style.opacity = "0";
+      item.style.transform = "translateY(30px)";
+      item.style.transition = "all 0.6s ease-out";
+      observer.observe(item);
     });
-  });
+
+    // Add class for visible items
+    document.addEventListener("scroll", () => {
+      galleryItems.forEach((item) => {
+        const rect = item.getBoundingClientRect();
+        if (rect.top < window.innerHeight - 50) {
+          item.style.opacity = "1";
+          item.style.transform = "translateY(0)";
+        }
+      });
+    });
+  }
 
   // Initial Confetti on Load
   setTimeout(() => {

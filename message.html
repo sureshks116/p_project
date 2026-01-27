@@ -1,0 +1,67 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Best Friend Wish - Message</title>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;500;700&family=Pacifico&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+  </head>
+  <body>
+    <!-- Confetti Canvas -->
+    <canvas id="confetti-canvas"></canvas>
+
+    <!-- Navigation -->
+    <nav class="navbar">
+      <div class="logo">Besties Forever</div>
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="memories.html">Memories</a></li>
+        <li><a href="music.html">Music</a></li>
+        <li><a href="message.html">Message</a></li>
+      </ul>
+    </nav>
+
+    <!-- Letter Section -->
+    <section id="letter" class="letter-section" style="padding-top: 100px">
+      <div class="letter-container">
+        <div class="envelope-icon">💌</div>
+        <h2>A Message For You</h2>
+        <div class="letter-content" contenteditable="true">
+          <p>Dear Bestie,</p>
+          <p>
+            Happy Birthday! I'm so lucky to have you in my life. You're not just
+            a friend, you're family. Thank you for always being there for me,
+            through the ups and the downs.
+          </p>
+          <p>
+            Here's to another year of amazing memories, inside jokes, and
+            unforgettable moments. Love you loads!
+          </p>
+          <p class="signature">- Your Best Friend</p>
+        </div>
+        <p class="edit-hint">
+          (You can edit this message directly here before printing or saving!)
+        </p>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+      <p>Made with ❤️ for you.</p>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
+    <script src="script.js"></script>
+  </body>
+</html>
