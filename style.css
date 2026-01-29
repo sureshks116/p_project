@@ -403,21 +403,7 @@ footer {
   }
 }
 
-/* Media Queries */
-@media (max-width: 768px) {
-  .hero-title {
-    font-size: 3rem;
-  }
-  .hero-subtitle {
-    font-size: 1.5rem;
-  }
-  .nav-links {
-    display: none; /* Simplification for mobile */
-  }
-  .navbar {
-    justify-content: center;
-  }
-}
+/* Media Queries Removed - Consolidated at bottom of file */
 
 
 /* Popup Background */
@@ -674,4 +660,116 @@ footer {
   0% { transform: translateX(-50%) translateY(0); opacity: 0.6; width: 10px; height: 10px; }
   50% { transform: translateX(-60%) translateY(-20px); opacity: 0.4; width: 20px; height: 20px; }
   100% { transform: translateX(-40%) translateY(-40px); opacity: 0; width: 30px; height: 30px; }
+}
+
+/* ================= Mobile Responsiveness ================= */
+@media (max-width: 768px) {
+  /* Global Layout */
+  .section-header h2 {
+    font-size: 2.5rem;
+  }
+  
+  section {
+    padding: 3rem 5%; /* Reduce padding */
+  }
+
+  /* Navbar */
+  .navbar {
+    flex-direction: column;
+    padding: 1rem;
+    background: rgba(255, 255, 255, 0.9); /* Add background for readability */
+    backdrop-filter: blur(10px);
+  }
+
+  .nav-links {
+    margin-top: 1rem;
+    gap: 1rem;
+    font-size: 0.9rem;
+    flex-wrap: wrap; /* Allow wrapping */
+    justify-content: center;
+  }
+
+  /* Hero Section */
+  .hero-title {
+    font-size: 3rem; /* Reduce form 5rem */
+    line-height: 1.2;
+    padding: 0 1rem;
+  }
+
+  .hero-subtitle {
+    font-size: 1.2rem; /* Reduce from 2rem */
+    padding: 0 1rem;
+  }
+
+  .cta-button {
+    font-size: 1rem;
+    padding: 1rem 2rem;
+  }
+
+  /* Letter Section */
+  .letter-container {
+    padding: 1.5rem;
+  }
+  
+  .letter-content {
+    font-size: 1rem;
+    padding: 1rem;
+  }
+  
+  .envelope-icon {
+    font-size: 3rem;
+  }
+
+  /* Music Section */
+  .music-section {
+    padding: 3rem 5%;
+  }
+  
+  .song-item {
+    flex-direction: column;
+    text-align: center;
+    gap: 1rem;
+    padding: 1rem;
+  }
+  
+  .audio-controls {
+    width: 100%;
+  }
+  
+  .audio-controls audio {
+    width: 100%;
+  }
+
+  /* Cake Popup Mobile Fixes */
+  .wish-card {
+    width: 90%;
+    max-width: 320px;
+    padding: 1.5rem;
+  }
+
+  .cake-container {
+    margin-top: 1rem;
+    transform: scale(0.7); /* Smaller scale for mobile */
+    margin-bottom: -30px; /* Compensate for scale scale */
+  }
+
+  .cake-message {
+    font-size: 2rem;
+    margin-top: 0;
+  }
+  
+  /* Floating shapes - hide or reduce opacity on mobile to preventing blocking */
+  .floating-shape {
+    opacity: 0.3;
+  }
+}
+
+@media (max-width: 480px) {
+  .hero-title {
+    font-size: 2.5rem;
+  }
+  
+  .cake-container {
+    transform: scale(0.6);
+  }
 }
