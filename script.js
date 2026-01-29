@@ -43,12 +43,51 @@ document.addEventListener("DOMContentLoaded", () => {
   // Button Click Event
   if (celebrateBtn) {
     celebrateBtn.addEventListener("click", () => {
-      fireConfetti();
-      celebrateBtn.innerHTML = "Make Another Wish! 🌠";
+      // Show Cake Popup instead of immediate text change
+      const cakePopup = document.getElementById("cake-popup");
+      cakePopup.classList.remove("hidden");
 
-      // Simple Audio Play (Optional, user can add their own file)
-      // const audio = new Audio('assets/birthday_song.mp3');
-      // audio.play().catch(e => console.log("Audio play failed (interaction needed first):", e));
+      // Handle Candle Blow Out
+      const candle = document.querySelector(".candle");
+      const flame = document.querySelector(".flame");
+
+      // Ensure we don't add multiple listeners if clicked multiple times
+      candle.onclick = function () {
+        flame.classList.add("out");
+
+        // Create smoke effect
+        const smoke = document.createElement("div");
+        smoke.classList.add("smoke");
+        candle.appendChild(smoke);
+
+        setTimeout(() => {
+          // Show Next Button
+          const nextBtn = document.getElementById("cake-next-btn");
+          nextBtn.classList.remove("hidden");
+          nextBtn.classList.add("fade-in-up");
+
+          celebrateBtn.innerHTML = "Wishes Made! 🎂✨";
+
+          // Big Final Confetti
+          fireConfetti();
+        }, 1000);
+      };
+
+      // Next Button Interaction
+      const nextBtn = document.getElementById("cake-next-btn");
+      if (nextBtn) {
+        nextBtn.addEventListener("click", () => {
+          window.location.href = "memories.html";
+        });
+      }
+
+      // Initial small burst just for fun
+      confetti({
+        particleCount: 150,
+        spread: 70,
+        origin: { y: 0.6 },
+        colors: ["#ff6b6b", "#4ecdc4", "#ffe66d", "#ffffff"],
+      });
     });
   }
 
