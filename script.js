@@ -60,11 +60,18 @@ document.addEventListener("DOMContentLoaded", () => {
         smoke.classList.add("smoke");
         candle.appendChild(smoke);
 
+        // Hide instruction immediately
+        const instruction = document.getElementById("cake-instruction");
+        if (instruction) instruction.classList.add("hidden");
+
         setTimeout(() => {
           // Show Next Button
           const nextBtn = document.getElementById("cake-next-btn");
-          nextBtn.classList.remove("hidden");
-          nextBtn.classList.add("fade-in-up");
+
+          if (nextBtn) {
+            nextBtn.classList.remove("hidden");
+            nextBtn.classList.add("fade-in-up");
+          }
 
           celebrateBtn.innerHTML = "Wishes Made! 🎂✨";
 
