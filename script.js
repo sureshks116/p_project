@@ -64,6 +64,15 @@ document.addEventListener("DOMContentLoaded", () => {
         const instruction = document.getElementById("cake-instruction");
         if (instruction) instruction.classList.add("hidden");
 
+        // Show Message
+        const message = document.getElementById("birthday-message");
+        if (message) {
+          console.log("Showing birthday message");
+          message.classList.remove("hidden");
+          message.style.display = "block"; // Force display just in case
+          message.classList.add("fade-in-up");
+        }
+
         setTimeout(() => {
           // Show Next Button
           const nextBtn = document.getElementById("cake-next-btn");
