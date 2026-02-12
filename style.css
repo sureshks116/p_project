@@ -491,11 +491,11 @@ footer {
   width: 270px;
   height: 110px;
   position: absolute;
-  bottom: -10px;
+  bottom: -12px;
   left: -10px;
   background-color: #ccc;
   border-radius: 50%;
-  box-shadow: 0 2px 2px #555, 0 4px 5px #333, 0 10px 10px rgba(0,0,0,0.5);
+  box-shadow: 0 4px 4px #555, 0 6px 8px #333, 0 15px 15px rgba(0,0,0,0.5);
 }
 
 .layer {
@@ -513,10 +513,10 @@ footer {
 
 .icing {
   position: absolute;
-  top: 70px;
-  left: 0;
+  top: 68px; /* Moved up to cover back seam */
+  left: -2.5px; /* Centered (255 - 250 = 5 / 2) */
   width: 255px;
-  height: 60px;
+  height: 65px; /* Slightly thicker */
   border-radius: 50%;
   background-color: #FFF8E1; /* Mango Cream/White */
   z-index: 2;
