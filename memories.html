@@ -20,10 +20,9 @@
   <body>
     <!-- Confetti Canvas -->
     <canvas id="confetti-canvas"></canvas>
-
     <!-- Navigation -->
     <nav class="navbar">
-      <div class="logo">Besties Forever 👫</div>
+      <div class="logo">Besties 👫</div>
       <ul class="nav-links">
         <li><a href="index.html">Home</a></li>
         <li><a href="memories.html">Memories</a></li>
@@ -36,18 +35,15 @@
     <section id="gallery" class="gallery-section" style="padding-top: 100px">
       <div class="section-header">
         <h2>Our Best Moments 📸</h2>
-        <p>A collection of our craziest adventures.</p>
+        <p>A collection of our craziest Memories.</p>
       </div>
       <div class="gallery-grid">
         <!-- Placeholders: User to replace src -->
         <div class="gallery-item">
-          <img src="assets/IMG_20250311_182353948.jpg" alt="Memory 1" />
-        </div>
-        <div class="gallery-item">
-          <img src="assets/IMG_20240621_185043599_HDR.jpg" alt="Memory 3" />
-        </div>
-        <div class="gallery-item">
           <img src="assets/IMG_20240621_185322318_HDR.jpg" alt="Memory 3" />
+        </div>
+        <div class="gallery-item">
+          <img src="assets/IMG_20240621_185043599_HDR.jpg" alt="Memory 2" />
         </div>
         <div class="gallery-item">
           <img src="assets/IMG_20240913_144316904_HDR.jpg" alt="Memory 3" />
@@ -58,8 +54,58 @@
         <div class="gallery-item">
           <img src="assets/IMG_20241005_132431423_HDR.jpg" alt="Memory 3" />
         </div>
+        <div class="gallery-item">
+          <img src="assets/rrnagar.jpeg" alt="Memory 3" />
+        </div>
+        <div class="gallery-item">
+          <img src="assets/group.jpeg" alt="Memory 3" />
+        </div>
+        <div class="gallery-item">
+          <img src="assets/IMG_20250311_182353948.jpg" alt="Memory 1" />
+        </div>
+        <div class="gallery-item">
+          <img src="assets/trip.jpeg" alt="Memory 1" />
+        </div>
+        <div class="gallery-item">
+          <img src="assets/ok.jpeg" alt="Memory 3" />
+        </div>
+        <div class="gallery-item">
+          <img src="assets/queen.jpeg" alt="Memory 3" />
+        </div>
+        <div class="gallery-item locked" id="locked-memory">
+          <div class="lock-overlay">
+            <i class="fa-solid fa-lock"></i>
+            <p>Secret Memory</p>
+          </div>
+          <img
+            src="assets/surip15.jpeg"
+            data-src="assets/surip15.jpeg"
+            alt="Hidden Memory"
+            class="secret-img hidden-initially"
+          />
+        </div>
       </div>
     </section>
+
+    <!-- Password Modal -->
+    <div id="password-modal" class="password-modal hidden">
+      <div class="modal-content">
+        <h3>Enter Password 🔒</h3>
+        <p>This memory is protected!</p>
+        <input
+          type="password"
+          id="password-input"
+          placeholder="Enter secret code..."
+        />
+        <p id="error-message" class="error-msg hidden">
+          Incorrect password! 🚫
+        </p>
+        <div class="modal-buttons">
+          <button id="submit-password">Unlock</button>
+          <button id="close-modal" class="cancel-btn">Cancel</button>
+        </div>
+      </div>
+    </div>
 
     <!-- Footer -->
     <footer>
